@@ -1,3 +1,4 @@
+// 带有附加配置的 Web 服务器
 package main
 
 import "net/http"

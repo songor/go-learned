@@ -1,3 +1,4 @@
+// 生成个人使用的 SSL 证书以及服务器私钥
 package main
 
 import (
