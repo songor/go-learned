@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Web Programming</title>
+</head>
+<body>
+<div>This is t1.html before</div>
+<div>This is the value of the dot in t1.html - [{{ . }}]</div>
+<hr/>
+<!-- 通过参数将模板 t1.html 中的数据传递给被嵌套的模板 t2.html -->
+{{ template "t2.html" . }}
+<hr/>
+<div>This is t1.html after</div>
+</body>
+</html>

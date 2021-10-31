@@ -1,0 +1,17 @@
+{{ define "layout" }}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Web Programming</title>
+</head>
+<body>
+<!--{{ template "content" }}-->
+<!-- 通过块动作添加默认的 content 模板 -->
+{{ block "content" . }}
+<h1 style="color: yellow">Hello World!</h1>
+{{ end }}
+</body>
+</html>
+
+{{ end }}

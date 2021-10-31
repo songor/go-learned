@@ -1,0 +1,20 @@
+<!-- 在一个模板文件里定义多个模板 -->
+{{ define "layout" }}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Web Programming</title>
+</head>
+<body>
+{{ template "content" }}
+</body>
+</html>
+
+{{ end }}
+
+{{ define "content" }}
+
+Hello World!
+
+{{ end }}

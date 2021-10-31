@@ -1,0 +1,15 @@
+<!-- 用于实施 XSS 攻击的表单 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Web Programming</title>
+</head>
+<body>
+<form action="/process-xss" method="post">
+    Comment: <input name="comment" type="text">
+    <hr/>
+    <button id="submit">Submit</button>
+</form>
+</body>
+</html>
