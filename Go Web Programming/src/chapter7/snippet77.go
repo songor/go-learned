@@ -7,23 +7,11 @@ import (
 	"io/ioutil"
 )
 
-type Post77 struct {
-	XMLName xml.Name `xml:"post"`
-	Id      string   `xml:"id,attr"`
-	Content string   `xml:"content"`
-	Author  Author77 `xml:"author"`
-}
-
-type Author77 struct {
-	Id   string `xml:"id,attr"`
-	Name string `xml:",chardata"`
-}
-
-func main() {
-	post := Post77{
+func S77() {
+	post := XmlPost{
 		Id:      "1",
 		Content: "Hello World!",
-		Author: Author77{
+		Author: XmlAuthor{
 			Id:   "2",
 			Name: "Sau Sheong",
 		},
@@ -35,7 +23,7 @@ func main() {
 		fmt.Println("Error marshalling to XML:", err)
 		return
 	}
-	err = ioutil.WriteFile("chapter7/output.xml", []byte(xml.Header+string(output)), 0644)
+	err = ioutil.WriteFile("output.xml", []byte(xml.Header+string(output)), 0644)
 	if err != nil {
 		fmt.Println("Error writing XML to file:", err)
 		return

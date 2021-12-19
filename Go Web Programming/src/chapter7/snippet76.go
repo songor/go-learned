@@ -8,19 +8,8 @@ import (
 	"os"
 )
 
-type Author76 struct {
-	Id   string `xml:"id,attr"`
-	Name string `xml:",chardata"`
-}
-
-type Comment76 struct {
-	Id      string   `xml:"id,attr"`
-	Content string   `xml:"content"`
-	Author  Author76 `xml:"author"`
-}
-
-func main() {
-	xmlFile, err := os.Open("chapter7/post.xml")
+func S76() {
+	xmlFile, err := os.Open("post.xml")
 	if err != nil {
 		fmt.Println("Error opening XML file:", err)
 		return
@@ -41,7 +30,7 @@ func main() {
 		switch se := t.(type) {
 		case xml.StartElement:
 			if se.Name.Local == "comment" {
-				var comment Comment76
+				var comment XmlComment
 				decoder.DecodeElement(&comment, &se)
 				fmt.Println(comment)
 			}

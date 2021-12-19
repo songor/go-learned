@@ -7,33 +7,15 @@ import (
 	"os"
 )
 
-type Post713 struct {
-	Id       int          `json:"id"`
-	Content  string       `json:"content"`
-	Author   Author713    `json:"author"`
-	Comments []Comment713 `json:"comments"`
-}
-
-type Author713 struct {
-	Id   int    `json:"id"`
-	Name string `json:"name"`
-}
-
-type Comment713 struct {
-	Id      int    `json:"id"`
-	Content string `json:"content"`
-	Author  string `json:"author"`
-}
-
-func main() {
-	post := Post713{
+func S713() {
+	post := JsonPost{
 		Id:      1,
 		Content: "Hello World!",
-		Author: Author713{
+		Author: JsonAuthor{
 			Id:   2,
 			Name: "Sau Sheong",
 		},
-		Comments: []Comment713{
+		Comments: []JsonComment{
 			{
 				Id:      3,
 				Content: "Have a great day!",
@@ -47,7 +29,7 @@ func main() {
 		},
 	}
 
-	jsonFile, err := os.Create("chapter7/output.json")
+	jsonFile, err := os.Create("output.json")
 	if err != nil {
 		fmt.Println("Error creating JSON file:", err)
 		return

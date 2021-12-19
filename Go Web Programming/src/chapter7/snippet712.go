@@ -7,33 +7,15 @@ import (
 	"io/ioutil"
 )
 
-type Post712 struct {
-	Id       int          `json:"id"`
-	Content  string       `json:"content"`
-	Author   Author712    `json:"author"`
-	Comments []Comment712 `json:"comments"`
-}
-
-type Author712 struct {
-	Id   int    `json:"id"`
-	Name string `json:"name"`
-}
-
-type Comment712 struct {
-	Id      int    `json:"id"`
-	Content string `json:"content"`
-	Author  string `json:"author"`
-}
-
-func main() {
-	post := Post712{
+func S712() {
+	post := JsonPost{
 		Id:      1,
 		Content: "Hello World!",
-		Author: Author712{
+		Author: JsonAuthor{
 			Id:   2,
 			Name: "Sau Sheong",
 		},
-		Comments: []Comment712{
+		Comments: []JsonComment{
 			{
 				Id:      3,
 				Content: "Have a great day!",
@@ -53,7 +35,7 @@ func main() {
 		return
 	}
 
-	err = ioutil.WriteFile("chapter7/output.json", output, 0644)
+	err = ioutil.WriteFile("output.json", output, 0644)
 	if err != nil {
 		fmt.Println("Error writing JSON to file:", err)
 		return
