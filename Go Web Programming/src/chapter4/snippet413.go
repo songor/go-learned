@@ -20,7 +20,7 @@ func setCookie(w http.ResponseWriter, r *http.Request) {
 	http.SetCookie(w, &c2)
 }
 
-func main() {
+func S413() {
 	http.HandleFunc("/set-cookie", setCookie)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

@@ -21,7 +21,7 @@ func processFile(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
+func S46() {
 	http.HandleFunc("/process-file", processFile)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

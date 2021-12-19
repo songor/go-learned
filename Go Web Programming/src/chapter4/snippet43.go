@@ -13,7 +13,7 @@ func body(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, string(body))
 }
 
-func main() {
+func S43() {
 	http.HandleFunc("/body", body)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

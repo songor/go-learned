@@ -35,7 +35,7 @@ func showMessage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
+func S417() {
 	http.HandleFunc("/set-message", setMessage)
 	http.HandleFunc("/show-message", showMessage)
 	server := http.Server{

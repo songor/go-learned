@@ -12,7 +12,7 @@ func process(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, r.PostForm)
 }
 
-func main() {
+func S44() {
 	http.HandleFunc("/process", process)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

@@ -11,7 +11,7 @@ func writeHeaderExample(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "No such service, try next door")
 }
 
-func main() {
+func S49() {
 	http.HandleFunc("/write-header", writeHeaderExample)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

@@ -21,7 +21,7 @@ func getCookie(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, cs)
 }
 
-func main() {
+func S415() {
 	http.HandleFunc("/get-cookie", getCookie)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

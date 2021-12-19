@@ -8,7 +8,7 @@ func writeExample(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(str))
 }
 
-func main() {
+func S48() {
 	http.HandleFunc("/write", writeExample)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

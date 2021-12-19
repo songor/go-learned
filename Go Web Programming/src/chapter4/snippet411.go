@@ -21,7 +21,7 @@ func jsonExample(w http.ResponseWriter, r *http.Request) {
 	w.Write(body)
 }
 
-func main() {
+func S411() {
 	http.HandleFunc("/json", jsonExample)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",

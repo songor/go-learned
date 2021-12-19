@@ -8,7 +8,7 @@ func headerExample(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(302)
 }
 
-func main() {
+func S410() {
 	http.HandleFunc("/redirect", headerExample)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",
