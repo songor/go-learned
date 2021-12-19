@@ -8,18 +8,18 @@ import (
 
 // <script>alert('Pwnd!');</script>
 func form(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("chapter5/form.html")
+	t, _ := template.ParseFiles("form.html")
 	t.Execute(w, nil)
 }
 
 func processXss(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("chapter5/tmp-xss.html")
+	t, _ := template.ParseFiles("tmp-xss.html")
 	//t.Execute(w, r.FormValue("comment"))
 	// 不对 HTML 进行转义
 	t.Execute(w, template.HTML(r.FormValue("comment")))
 }
 
-func main() {
+func S520() {
 	http.HandleFunc("/form", form)
 	http.HandleFunc("/process-xss", processXss)
 	server := http.Server{

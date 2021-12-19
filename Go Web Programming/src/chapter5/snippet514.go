@@ -15,11 +15,11 @@ func formatDate(t time.Time) string {
 func processFunc(w http.ResponseWriter, r *http.Request) {
 	funcMap := template.FuncMap{"fdate": formatDate}
 	t := template.New("tmp-func.html").Funcs(funcMap)
-	t, _ = t.ParseFiles("chapter5/tmp-func.html")
+	t, _ = t.ParseFiles("tmp-func.html")
 	t.Execute(w, time.Now())
 }
 
-func main() {
+func S514() {
 	http.HandleFunc("/process-func", processFunc)
 	server := http.Server{
 		Addr: "127.0.0.1:8080",
