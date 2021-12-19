@@ -37,7 +37,7 @@ func (post *SqlxPost) Create() (err error) {
 	return
 }
 
-func main() {
+func S617() {
 	post := SqlxPost{Content: "Hello World", AuthorName: "Sau Sheong"}
 	post.Create()
 	readPost, _ := GetSqlxPost(post.Id)

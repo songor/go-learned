@@ -8,20 +8,14 @@ import (
 	"strconv"
 )
 
-type CsvPost struct {
-	Id      int
-	Content string
-	Author  string
-}
-
-func main() {
+func S63() {
 	csvFile, err := os.Create("posts.csv")
 	if err != nil {
 		panic(err)
 	}
 	defer csvFile.Close()
 
-	allPosts := []CsvPost{
+	allPosts := []Post{
 		{Id: 1, Content: "Hello World!", Author: "Sau Sheong"},
 		{Id: 2, Content: "Bonjour Monde!", Author: "Pierre"},
 		{Id: 3, Content: "Hola Mundo!", Author: "Pedro"},
@@ -51,10 +45,10 @@ func main() {
 		panic(err)
 	}
 
-	var posts []CsvPost
+	var posts []Post
 	for _, item := range records {
 		id, _ := strconv.ParseInt(item[0], 0, 0)
-		post := CsvPost{Id: int(id), Content: item[1], Author: item[2]}
+		post := Post{Id: int(id), Content: item[1], Author: item[2]}
 		posts = append(posts, post)
 	}
 	fmt.Println(posts[0].Id)

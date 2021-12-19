@@ -7,12 +7,6 @@ import (
 	_ "github.com/lib/pq"
 )
 
-type DbPost struct {
-	Id      int
-	Content string
-	Author  string
-}
-
 var Db *sql.DB
 
 func init() {
@@ -23,13 +17,13 @@ func init() {
 	}
 }
 
-func Posts(limit int) (posts []DbPost, err error) {
+func Posts(limit int) (posts []Post, err error) {
 	rows, err := Db.Query("select id, content, author from posts limit $1", limit)
 	if err != nil {
 		return
 	}
 	for rows.Next() {
-		post := DbPost{}
+		post := Post{}
 		err = rows.Scan(&post.Id, &post.Content, &post.Author)
 		if err != nil {
 			return
@@ -40,13 +34,13 @@ func Posts(limit int) (posts []DbPost, err error) {
 	return
 }
 
-func GetPost(id int) (post DbPost, err error) {
-	post = DbPost{}
+func GetPost(id int) (post Post, err error) {
+	post = Post{}
 	err = Db.QueryRow("select id, content, author from posts where id = $1", id).Scan(&post.Id, &post.Content, &post.Author)
 	return
 }
 
-func (post *DbPost) Create() (err error) {
+func (post *Post) Create() (err error) {
 	statement := "insert into posts (content, author) values ($1, $2) returning id"
 	stmt, err := Db.Prepare(statement)
 	if err != nil {
@@ -57,18 +51,18 @@ func (post *DbPost) Create() (err error) {
 	return
 }
 
-func (post *DbPost) Update() (err error) {
+func (post *Post) Update() (err error) {
 	_, err = Db.Exec("update posts set content = $2, author = $3 where id = $1", post.Id, post.Content, post.Author)
 	return
 }
 
-func (post *DbPost) Delete() (err error) {
+func (post *Post) Delete() (err error) {
 	_, err = Db.Exec("delete from posts where id = $1", post.Id)
 	return
 }
 
-func main() {
-	post := DbPost{Content: "Hello World!", Author: "Sau Sheong"}
+func S66() {
+	post := Post{Content: "Hello World!", Author: "Sau Sheong"}
 
 	fmt.Println(post)
 	post.Create()

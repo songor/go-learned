@@ -8,12 +8,6 @@ import (
 	"io/ioutil"
 )
 
-type GobPost struct {
-	Id      int
-	Content string
-	Author  string
-}
-
 func storePost(data interface{}, filename string) {
 	buffer := new(bytes.Buffer)
 	encoder := gob.NewEncoder(buffer)
@@ -40,14 +34,14 @@ func loadPost(data interface{}, filename string) {
 	}
 }
 
-func main() {
-	post := GobPost{
+func S64() {
+	post := Post{
 		Id:      1,
 		Content: "Hello World!",
 		Author:  "Sau Sheong",
 	}
 	storePost(post, "post")
-	var postRead GobPost
+	var postRead Post
 	loadPost(&postRead, "post")
 	fmt.Println(postRead)
 }

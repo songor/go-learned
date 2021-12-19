@@ -3,12 +3,6 @@ package main
 
 import "fmt"
 
-type Post struct {
-	Id      int
-	Content string
-	Author  string
-}
-
 var PostById map[int]*Post
 var PostsByAuthor map[string][]*Post
 
@@ -17,7 +11,7 @@ func store(post Post) {
 	PostsByAuthor[post.Author] = append(PostsByAuthor[post.Author], &post)
 }
 
-func main() {
+func S61() {
 	PostById = make(map[int]*Post)
 	PostsByAuthor = make(map[string][]*Post)
 

@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func main() {
+func S62() {
 	data := []byte("Hello World!\n")
 	err := ioutil.WriteFile("data1", data, 0644)
 	if err != nil {

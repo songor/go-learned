@@ -67,7 +67,7 @@ func (post *MapPost) Create() (err error) {
 	return
 }
 
-func main() {
+func S614() {
 	post := MapPost{Content: "Hello World!", Author: "Sau Sheong"}
 	post.Create()
 

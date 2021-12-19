@@ -36,7 +36,7 @@ func init() {
 	GormDb.AutoMigrate(&GormPost{}, &GormComment{})
 }
 
-func main() {
+func S618() {
 	post := GormPost{Content: "Hello World!", Author: "Sau Sheong"}
 	fmt.Println(post)
 
