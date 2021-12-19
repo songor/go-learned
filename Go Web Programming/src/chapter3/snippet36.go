@@ -13,7 +13,7 @@ func (h *MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello World!")
 }
 
-func main() {
+func S36() {
 	handler := MyHandler{}
 	server := http.Server{
 		Addr:    "127.0.0.1:8080",

@@ -14,7 +14,7 @@ func world(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "World!")
 }
 
-func main() {
+func S38() {
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/world", world)
 

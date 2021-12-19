@@ -11,7 +11,7 @@ func helloWithParams(w http.ResponseWriter, r *http.Request, p httprouter.Params
 	fmt.Fprintf(w, "hello %s!\n", p.ByName("name"))
 }
 
-func main() {
+func S312() {
 	mux := httprouter.New()
 	mux.GET("/hello/:name", helloWithParams)
 

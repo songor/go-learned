@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-func main() {
+func S35() {
 	max := new(big.Int).Lsh(big.NewInt(1), 128)
 	serialNumber, _ := rand.Int(rand.Reader, max)
 	subject := pkix.Name{
