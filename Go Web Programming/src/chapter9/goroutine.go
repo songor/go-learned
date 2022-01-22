@@ -1,3 +1,4 @@
+// goroutine 使用示例
 package main
 
 import (
@@ -20,6 +21,7 @@ func printLetters() {
 	}
 }
 
+// 使用等待组
 func printNumbers2(wg *sync.WaitGroup) {
 	for i := 0; i < 10; i++ {
 		time.Sleep(1 * time.Microsecond)
@@ -46,7 +48,7 @@ func goPrint() {
 	go printLetters()
 }
 
-func main() {
+func S96() {
 	var wg sync.WaitGroup
 	wg.Add(2)
 	go printNumbers2(&wg)
